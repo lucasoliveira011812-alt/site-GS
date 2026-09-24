@@ -1,0 +1,134 @@
+* { margin:0; padding:0; box-sizing:border-box; }
+
+body {
+    font-family: Anton, Tahoma, sans-serif;
+    background:#dff0fb;
+    overflow-x:hidden;
+}
+
+a { text-decoration:none; }
+
+/* ===== CABEÇALHO ===== */
+#cabecalho{
+    position:relative;
+    background:linear-gradient(180deg,#3eaaff,#1c86ee);
+    padding:18px 90px 14px 24px;
+    color:#fff;
+}
+
+.marca{ display:flex; align-items:baseline; gap:16px; flex-wrap:wrap; }
+
+.marca h1{
+    font-family:'Anton',Impact,sans-serif;
+    font-size:clamp(46px,9vw,84px);
+    color:#fff;
+    -webkit-text-stroke:2px #0b2e6b;
+    line-height:1;
+}
+
+.informacoes{ display:flex; flex-direction:column; gap:2px; }
+
+.informacoes strong{
+    font-family:'Anton',Impact,sans-serif;
+    color:#ff9d2f;
+    -webkit-text-stroke:1px #0b2e6b;
+    font-size:clamp(14px,2.4vw,20px);
+    letter-spacing:1px;
+}
+
+.informacoes span{ font-size:12px; opacity:.9; }
+
+#logo{ position:absolute; top:14px; right:14px; width:54px; height:54px; object-fit:contain; }
+
+#cabecalho nav{ margin-top:14px; display:flex; flex-wrap:wrap; gap:12px; }
+
+#cabecalho nav a{
+    font-family:'Anton',Impact,sans-serif;
+    color:#fff;
+    font-size:clamp(15px,2.2vw,22px);
+    letter-spacing:1px;
+}
+
+#cabecalho nav a:hover{ color:#ff9d2f; }
+
+/* ===== BANNER PRINCIPAL ===== */
+.banner{
+    position:absolute;
+    min-height:100vh;
+    display:flex;
+    flex-wrap:wrap;
+    align-items:center;
+    background:
+        radial-gradient(circle,#bfe0f7 1.6px,transparent 1.6px) 0 0/20px 20px,
+        #eaf6fd;
+    overflow:hidden;
+    padding:60px 6%;
+}
+
+.fundo{
+    position:absolute;
+    top:0; right:0;
+    left: 50%;
+    z-index:1;
+}
+
+/* ===== JANELAS 100% CSS ===== */
+.janela{
+    position:relative;
+    z-index:2;
+    width:100%;
+    max-width:440px;
+    border-radius:10px;
+    overflow:hidden;
+    border:1px solid rgba(11,46,107,.4);
+    box-shadow:0 10px 24px rgba(11,46,107,.25);
+}
+
+.apresentacao{ margin-bottom:-28px; }
+.quem-somos{ margin-left:14%; }
+
+.barra{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    padding:10px 12px;
+}
+
+.apresentacao .barra{ background:linear-gradient(180deg,#a3e6a3,#4caf50); }
+.quem-somos .barra{ background:linear-gradient(180deg,#ffffff,#c7d2d8); }
+
+.barra h2{ font-size:14px; letter-spacing:1px; color:#0d2b0d; }
+.quem-somos .barra h2{ color:#1a2b33; }
+
+.botoes{ margin-left:auto; display:flex; gap:6px; }
+
+.botoes span{
+    width:20px; height:20px;
+    display:flex; align-items:center; justify-content:center;
+    background:#f2f2f2;
+    border:1px solid #8a8a8a;
+    border-radius:3px;
+    font-size:13px;
+    color:#333;
+}
+
+.botoes span:last-child{ background:#e05c4a; border-color:#c74631; color:#fff; }
+
+.conteudo{ padding:22px 20px; background:rgba(255,255,255,.75); }
+.quem-somos .conteudo{ background:#eef2f4; }
+
+.conteudo p{ font-size:14.5px; line-height:1.6; color:#0b2e6b; }
+
+/* ===== RESPONSIVO ===== */
+@media (max-width:900px){
+    .banner{ flex-direction:column; padding:40px 6% 60px; }
+    .fundo{ position:absolute; width:100%; height:260px; order:-1; margin-bottom:24px; }
+    .apresentacao, .quem-somos{ margin-left:0; margin-bottom:20px; max-width:100%; }
+    #logo{ position:static; margin-top:10px; }
+    #cabecalho{ padding-right:24px; }
+}
+
+@media (max-width:500px){
+    .marca h1{ font-size:52px; }
+    #cabecalho nav a{ font-size:15px; }
+}
